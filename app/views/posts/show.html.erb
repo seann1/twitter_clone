@@ -1,0 +1,9 @@
+<h1 class="title"><%= @user.email %></h1>
+
+
+<% @user.posts.each do |post| %>
+  <div id="post">
+  <p class="body"><%= post.body %></p>
+  <%= link_to post.user.email, post_path(post), class: "email" %></p>
+</div>
+  <% end %>

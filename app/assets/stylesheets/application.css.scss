@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+@import "clrs";
+@import "foundation_and_overrides";
+#post {
+  width: 50%;
+  padding: 10px;
+  background-color: $blue;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $purple;
+  border-radius: 5px;
+  color: white;
+  margin: 3px;
+}
+
+.title {
+  background-color: $black;
+  border-width: 5px;
+  padding: 10px;
+  border-color: $aqua;
+  border-style: solid;
+  border-radius: 3px;
+  width: 60%;
+  color: $gray;
+}
+
+.right {
+  background-color: $olive;
+}
+
+.top-bar {
+  background-color: $maroon;
+}
+
+.email {
+  color: $yellow;
+}
+
+.other {
+  background-color: $red;
+}
+
+.other:hover {
+  background-color: $yellow;
+  color: $olive;
+}
+

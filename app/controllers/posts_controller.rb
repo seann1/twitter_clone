@@ -17,6 +17,12 @@ class PostsController < ApplicationController
     end
   end
   
+  def show
+    @user = User.find(current_user)
+    @posts = Post.all
+    @post = Post.find(params[:id])
+  end
+  
   def edit
     @post = Post.find(params[:id])
   end

@@ -8,6 +8,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
+gem 'clrs'
+gem 'foundation-rails'
 
 group :development do
   gem 'better_errors'
