@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
 
     stripped_array.each do |i|
       if body_split.include?(i)
-        mentions << i
+        @mentions << i
       end
     end
     @mentions
