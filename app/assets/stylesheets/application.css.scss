@@ -19,13 +19,17 @@
 #post {
   width: 50%;
   padding: 10px;
-  background-color: $blue;
+  background-color: $gray;
   border-width: 2px;
   border-style: solid;
   border-color: $purple;
   border-radius: 5px;
   color: white;
   margin: 3px;
+}
+
+.timestamps {
+  font-size: .5em;
 }
 
 .title {

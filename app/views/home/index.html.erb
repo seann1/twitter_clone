@@ -1,15 +1,17 @@
 
 <% if current_user != nil %>
-<h1><%= current_user.email %></h1>
+<h1><%= current_user.username %></h1>
 <% end %>
 
 
   <% @posts.each do |post| %>
 <div id="post">
   <p class="body"><%= post.body %></p>
-  <%= link_to post.user.email, post_path(post), class: "email" %></p>
+  <%= link_to post.user.username, post_path(post), class: "email" %></p>
 </div>
   <% end %>
 
 
-<%= link_to "new post", new_post_path, class: "button radius round other" %>
+<%= link_to "new post", new_post_path, id: "button", class: "button radius round other", remote: true %>
+<div id="new_form">
+</div>

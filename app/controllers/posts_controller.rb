@@ -1,32 +1,40 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
   def index
     @posts = Post.all
   end
-  
+
   def new
     @post = Post.new
+    respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js
+    end
   end
-  
+
   def create
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "Post created"
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js
+      end
     else
       flash[:notice] = "Invalid post"
     end
   end
-  
+
   def show
-    @user = User.find(current_user)
     @posts = Post.all
     @post = Post.find(params[:id])
+    @user = User.find_by_id(@post.user_id)
   end
-  
+
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
@@ -36,7 +44,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post not updated"
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

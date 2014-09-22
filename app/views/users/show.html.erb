@@ -1,16 +1,4 @@
 <h1 class="title"><%= @user.username %>'s tweets</h1>
-<table>
-  <thead>
-    <tr>
-      <th><%= link_to "Followers", user_friendships_path(@user.id) %></th><th><%= link_to "Following", user_friendships_path(@user.id) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= current_user.followers.count %></td><td><%= current_user.following.count %></td>
-    </tr>
-    </tbody>
-</table>
 <% if @user != current_user && current_user != nil %>
     <%= link_to "follow", post_friendships_path(@post), id: "follow", :method => :post %>
 <% end %>

@@ -1,0 +1,31 @@
+
+<% if current_user != nil %>
+<h1><%= current_user.username %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to "Followers", user_friendships_path(current_user.id) %></th><th><%= link_to "Following", user_friendships_path(current_user.id) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= current_user.followers.count %></td><td><%= current_user.following.count %></td>
+    </tr>
+    </tbody>
+</table>
+<% end %>
+
+
+  <% @posts.each do |post| %>
+<div id="post">
+  <p class="body"><%= post.body %></p>
+  <%= link_to post.user.username, post_path(post.id), class: "email" %></p>
+</div>
+  <% end %>
+
+
+<%= link_to "new post", new_post_path, id: "button", class: "button radius round other", remote: true %>
+<div id="new_form">
+</div>
+
+

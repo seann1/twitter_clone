@@ -17,13 +17,13 @@
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 
   </ul>
-    
+
     <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
         <% if user_signed_in? %>
-        <a href="#"><%= current_user.email %></a>
+        <a href="#"><%= current_user.username %></a>
         <% else %>
         <a href="#">Welcome</a>
         <% end %>
@@ -41,7 +41,7 @@
       </ul>
     </section>
   </nav>
-  
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
