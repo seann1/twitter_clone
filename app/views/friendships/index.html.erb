@@ -8,13 +8,17 @@
   <div class="content active" id="panel1">
     <% @user.following.each do |f| %>
       <% user = User.find_by_id(f.person_id) %>
+      <div class="follower">
     <p><%= link_to user.username, user_path(user) %></p>
+  </div>
     <% end %>
   </div>
   <div class="content" id="panel2">
     <% @user.followers.each do |f| %>
       <% user = User.find_by_id(f.follower_id) %>
+      <div class="follower">
     <p><%= link_to user.username, user_path(user) %></p>
+  </div>
     <% end %>
   </div>
   </div>
