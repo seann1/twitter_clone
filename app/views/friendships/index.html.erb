@@ -1,0 +1,20 @@
+<h1 class="user-title"><%= @user.username %></h1>
+<dl class="tabs" data-tab>
+  <dd class="active tab"><a href="#panel1">Followers</a></dd>
+  <dd class="active tab"><a href="#panel2">Following</a></dd>
+</dl>
+
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <% @user.following.each do |f| %>
+      <% user = User.find_by_id(f.person_id) %>
+    <p><%= link_to user.username, user_path(user) %></p>
+    <% end %>
+  </div>
+  <div class="content" id="panel2">
+    <% @user.followers.each do |f| %>
+      <% user = User.find_by_id(f.follower_id) %>
+    <p><%= link_to user.username, user_path(user) %></p>
+    <% end %>
+  </div>
+  </div>
