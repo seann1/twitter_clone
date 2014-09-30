@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'clrs'
 gem 'foundation-rails'
+gem "paperclip"
 
 group :development do
   gem 'better_errors'

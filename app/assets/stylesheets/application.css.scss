@@ -19,13 +19,96 @@
 #post {
   width: 50%;
   padding: 10px;
-  background-color: $gray;
+  background: #b7a7a7; /* Old browsers */
+  background: -moz-linear-gradient(top, #b7a7a7 0%, #edd3ff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7a7a7), color-stop(100%,#edd3ff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #b7a7a7 0%,#edd3ff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7a7a7', endColorstr='#edd3ff',GradientType=0 ); /* IE6-9 */
   border-width: 2px;
   border-style: solid;
   border-color: $purple;
   border-radius: 5px;
   color: white;
   margin: 3px;
+  background-repeat: none;
+}
+
+.color {
+  background-color: $red;
+}
+
+.color:hover {
+  background-color: $green;
+}
+
+body {
+  background-image: url('backgroundtwo.png');
+}
+.table-head {
+  background-color: #92CBF0;
+  opacity: 90%;
+  border-radius: 0px 10px 0px 5px;
+}
+
+.follow {
+  opacity: 1.0;
+  color: #BEED6D;
+}
+
+.table-body {
+  background-color: rgba(0,0,255,0.0);
+}
+
+table {
+  background-color: rgba(0,0,255,0.0);
+}
+
+.container {
+  margin: 40px;
+}
+
+.form-control {
+  width: 60%;
+}
+
+.image-thumb {
+  height: 60px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  animation: imag-border 5s;
+}
+
+.label {
+  border-radius: 3px;
+}
+
+.small-image-thumb {
+  height: 22px;
+  margin: 5px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  animation: imag-border 5s;
+}
+
+@keyframes imag-border {
+    from {border-color: $orange;}
+    to {border-color: $yellow;}
+}
+
+.input {
+  width: 60%;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+
 }
 
 .follower {

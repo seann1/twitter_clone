@@ -1,2 +1,5 @@
 $('#button').hide();
+$('#new_form').hide();
 $('#new_form').append("<%= j render 'new' %>")
+$('#new_form').fadeIn('1000');
+$('#enlarge_button').animate({ WebkitTransform: 'rotate(360deg)'}, 5000);

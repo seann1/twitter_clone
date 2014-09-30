@@ -1,13 +1,13 @@
 
 <% if current_user != nil %>
-<h1><%= current_user.username %></h1>
+<h1><%= image_tag current_user.avatar.url(:thumb), class: "image-thumb" %>  <%= current_user.username %></h1>
 <table>
-  <thead>
+  <thead class="table-head">
     <tr>
-      <th><%= link_to "Followers", user_friendships_path(current_user.id) %></th><th><%= link_to "Following", user_friendships_path(current_user.id) %></th>
+      <th class="table-head"><%= link_to "Followers", user_friendships_path(current_user.id), class: "follow" %></th><th class="table-head"><%= link_to "Following", user_friendships_path(current_user.id), class: "follow" %></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="table-body">
     <tr>
       <td><%= current_user.followers.count %></td><td><%= current_user.following.count %></td>
     </tr>
@@ -19,7 +19,7 @@
   <% @posts.each do |post| %>
 <div id="post">
   <p class="body"><%= post.body %></p>
-  <%= link_to post.user.username, post_path(post.id), class: "email" %></p>
+  <div class="inner-post"><%= image_tag post.user.avatar.url(:thumb), class: "small-image-thumb" %><%= link_to post.user.username, post_path(post.id), class: "email label" %></div>
 </div>
   <% end %>
 

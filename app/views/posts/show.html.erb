@@ -28,7 +28,7 @@
   <div id="post">
   <p class="body"><%= post.body %></p>
   <p class="timestamps"> <%= post.created_at %></p>
-  <%= link_to "Delete", post_path({ :id => @post.id }),
+  <%= link_to "Delete", post_path({ :id => @post.id }), class: "label",
                         :data => {:confirm => "You sure?",
                         :method => "delete"} %>
   </div>

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :friendships
   end
 
+  # match('/users', :via => "patch", :to => 'profiles#charities_show')
+
   root to: "posts#index"
 end
