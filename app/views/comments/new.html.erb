@@ -1,0 +1,43 @@
+<div id="post">
+  <p class="body"><%= @post.body %></p>
+  <div class="inner-post"><%= image_tag @post.user.avatar.url(:thumb), class: "small-image-thumb" %><%= link_to @post.user.username, post_path(@post.id), class: "email label" %>  <div class="timestamps"><%= @post.created_at %></div></div>
+</div>
+<% @post.comments.each_with_index do |comment, index| %>
+  <% if index != 0 %>
+    <div class="comments">
+      <p class="body"><%= comment.content %></p>
+      <div class="inner-post">
+      <%= image_tag comment.user.avatar.url(:thumb), class: "small-image-thumb" %>
+      <%= link_to comment.user.username, post_path(comment.user_id), class: "email label"%>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to post_comment_path(:post_id => comment.post_id, :id => comment.id),
+                        :data => {:confirm => "You sure?",
+                        :method => "delete"} do %>
+                        <i class="fa fa-trash fa-md trash"></i>
+                        <% end %>
+      <% end %>
+      <div class="timestamps-comment"><%= @post.created_at %></div></div>
+    </div>
+  <% else %>
+    <div class="other-comments">
+      <p class="body"><%= comment.content %></p>
+      <div class="inner-post">
+      <%= image_tag comment.user.avatar.url(:thumb), class: "small-image-thumb" %>
+      <%= link_to comment.user.username, post_path(comment.user_id), class: "email label"%>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to post_comment_path(:post_id => comment.post_id, :id => comment.id),
+                        :data => {:confirm => "You sure?",
+                        :method => "delete"} do %>
+                        <i class="fa fa-trash fa-md trash"></i>
+                        <% end %>
+      <% end %>
+      <div class="timestamps-comment"><%= @post.created_at %></div></div>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+<div class="comment-form">
+<%= render 'new' %>
+</div>

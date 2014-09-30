@@ -11,6 +11,8 @@ gem 'devise'
 gem 'clrs'
 gem 'foundation-rails'
 gem "paperclip"
+gem 'font-awesome-sass'
+gem 'chronic'
 
 group :development do
   gem 'better_errors'

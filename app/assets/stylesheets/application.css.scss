@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
 
@@ -19,22 +20,137 @@
 #post {
   width: 50%;
   padding: 10px;
-  background: #b7a7a7; /* Old browsers */
-  background: -moz-linear-gradient(top, #b7a7a7 0%, #edd3ff 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7a7a7), color-stop(100%,#edd3ff)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #b7a7a7 0%,#edd3ff 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #b7a7a7 0%,#edd3ff 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7a7a7', endColorstr='#edd3ff',GradientType=0 ); /* IE6-9 */
-  border-width: 2px;
-  border-style: solid;
-  border-color: $purple;
-  border-radius: 5px;
+  background-color: #6E6E6E;
+  border-radius: 0px 5px 0px 5px;
   color: white;
   margin: 3px;
-  background-repeat: none;
 }
+
+.like-bar {
+  display: inline;
+}
+
+.comment-bar {
+  display: inline;
+  position: relative;
+  left: 18px;
+  background-color: #E3CCC1;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-style: bold;
+  border-radius: 0px 0px 5px 0px;
+  color: $black;
+  transition: background-color 2s;
+}
+
+.like-bar {
+  display: inline;
+  position: relative;
+  left: 20px;
+  background-color: $red;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-style: bold;
+  border-radius: 0px 0px 5px 0px;
+  color: $white;
+  transition: background-color 1s;
+}
+
+.like-bar:hover {
+  background-color: $orange;
+
+}
+
+.comment-bar:hover {
+  background-color: #D4B700;
+
+}
+
+.comments {
+  background-color: #C9BC9D;
+  padding: 15px;
+  border-radius: 0px 5px 0px 15px;
+  width: 40%;
+  margin: 3px;
+
+}
+
+.icon-button {
+  padding: -20px;
+}
+.other-comments {
+  background-color: #C9BC9D;
+  padding: 15px;
+  border-radius: 0px 20px 0px 5px;
+  width: 40%;
+  margin: 3px;
+
+}
+
+.trash {
+  position: relative;
+  top: 27px;
+  left: 5px;
+  float: right;
+  color: #2E2E2E;
+}
+
+.timestamps-comment {
+  color: #8e44ad;
+  position: relative;
+  top: 3px;
+  font-size: 8px;
+  left: 4px;
+}
+
+.post-icon{
+  position: relative;
+  top: 4px;
+  color: #f1c40f;
+  transition: color 1s;
+}
+
+.post-icon:hover {
+  position: relative;
+  top: 4px;
+  color: #FF9100;
+}
+
+.likes-count {
+  position: relative;
+  top: 5px;
+  font-size: 10px;
+  background-color: $gray;
+  margin-left: -10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 0px 5px 0px 0px;
+  color: $black;
+}
+
+.post-icon-like {
+  position: relative;
+  top: 15px;
+  color: #f1c40f;
+  left: -6px;
+  transition: color 1s;
+}
+.post-icon-like:hover {
+  color: #FF9100;
+}
+
+.timestamps {
+  color: #2ecc71;
+  position: relative;
+  top: 3px;
+}
+
+
 
 .color {
   background-color: $red;
@@ -56,6 +172,12 @@ body {
 .follow {
   opacity: 1.0;
   color: #BEED6D;
+  transition: color 4s;
+}
+
+.follow:hover {
+  color: #FA5705;
+
 }
 
 .table-body {
@@ -84,7 +206,16 @@ table {
 }
 
 .label {
+  color: $black;
   border-radius: 3px;
+  transition: color 1s;
+  transition: background-color 1s;
+  background-color: $gray;
+}
+
+.label:hover {
+  color: $red;
+  background-color: $black;
 }
 
 .small-image-thumb {
@@ -124,6 +255,11 @@ table {
   padding: 10px;
   border-radius: 10px;
   width: 60%;
+  color: white;  /* Fallback: assume this color ON TOP of image */
+   background: url(sunset.jpg);
+   background-size: 40px;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
 
@@ -148,7 +284,7 @@ table {
 }
 
 .top-bar {
-  background-color: $maroon;
+ background-color: #1A1F19;
 }
 
 .email {

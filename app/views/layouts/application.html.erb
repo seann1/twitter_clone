@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
   <nav class="top-bar" data-topbar role="navigation">
@@ -30,9 +31,13 @@
         <ul class="dropdown">
           <li>
   <% if user_signed_in? %>
-            <%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <%= link_to edit_user_registration_path do %>
+              Edit Profile <i class="fa fa-pencil"></i>
+              <% end %></li>
           <li>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            Logout   <i class="fa fa-moon-o"></i>
+            <% end %></li>
 <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>

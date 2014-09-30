@@ -1,10 +1,11 @@
-<%= form_for @post do |f| %>
+<%= form_for [@post, @comment] do |f| %>
 <div class="form-group">
   <br>
-  <%= f.text_field :body, class: "form-control input"%>
+  <%= f.text_field :content, class: "form-control input"%>
 </div>
 <%= f.hidden_field :user_id, :value => current_user.id %>
+<%= f.hidden_field :post_id, :value => @post.id %>
 <%= button_tag(type: 'submit', class: "button color icon-button") do %>
-  Post
+  <i class="fa fa-twitch fa-2x"></i>
 <% end %>
 <% end %>

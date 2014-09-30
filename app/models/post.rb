@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :post_likes
 
   before_save :check_for_mentions
 

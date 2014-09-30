@@ -12,7 +12,7 @@
     </tbody>
 </table>
 <% if @user != current_user && current_user != nil %>
-    <%= link_to "follow", post_friendships_path(@post), id: "follow", :method => :post %>
+    <%= link_to "follow", post_friendships_path(@post), id: "follow", class: "small button", :method => :post %>
 <% end %>
 
 <% if @user != current_user && current_user != nil %>
@@ -20,6 +20,7 @@
   <div id="post">
   <p class="body"><%= post.body %></p>
   <p class="timestamps"> <%= post.created_at %></p>
+
 
 </div>
   <% end %>
