@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
   after_create :signup_confirmation
 
   def signup_confirmation
-    UserMailer.signup_confirmation(self).deliver
+#     UserMailer.signup_confirmation(self).deliver
   end
 end

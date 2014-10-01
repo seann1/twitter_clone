@@ -15,7 +15,7 @@
 </table>
 <% end %>
 
-
+<% if current_user != nil %>
   <% @posts.each do |post| %>
 <div id="post">
   <p class="body"><%= post.body %></p>
@@ -28,6 +28,7 @@
       <% end %></div><div class="timestamps"><%= post.created_at %></div><div class="likes-count"><div class="like-bar"><%= post.post_likes.count %>  likes</div>   <div class="comment-bar"><%= post.comments.count %>  comments</div></div>
 </div>
   <% end %>
+<% end %>
 
 
 <%= link_to "new post", new_post_path, id: "button", class: "button radius round other", remote: true %>

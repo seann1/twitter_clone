@@ -7,14 +7,14 @@ class RegistrationsController < Devise::RegistrationsController
     # add custom create logic here
   end
 
-    dfgd
   def update
-    dgd
     @user = User.find(current_user)
     @user.update(user_params)
     flash[:notice] = "updated"
 
   end
+  
+  private
 
   def user_params
     params.require(:user).permit(:avatar)

@@ -144,6 +144,16 @@
   color: #FF9100;
 }
 
+.comment-icon-like {
+  position: relative;
+  top: 15px;
+  color: $red;
+  left: -6px;
+  transition: color 1s;
+}
+.comment-icon-like:hover {
+  color: #FF9100;
+}
 .timestamps {
   color: #2ecc71;
   position: relative;

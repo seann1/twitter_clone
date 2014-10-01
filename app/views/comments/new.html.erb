@@ -1,6 +1,12 @@
 <div id="post">
   <p class="body"><%= @post.body %></p>
-  <div class="inner-post"><%= image_tag @post.user.avatar.url(:thumb), class: "small-image-thumb" %><%= link_to @post.user.username, post_path(@post.id), class: "email label" %>  <div class="timestamps"><%= @post.created_at %></div></div>
+  <div class="inner-post"><%= image_tag @post.user.avatar.url(:thumb), class: "small-image-thumb" %><%= link_to @post.user.username, post_path(@post.id), class: "email label" %>  <%= link_to new_post_comment_path(@post.id) do %><i class="fa fa-twitch fa-lg post-icon"></i><% end %><%= link_to post_post_likes_path(@post.id), method: :post do %><i class="fa fa-thumbs-o-up fa-fw post-icon-like"></i><% end %>  <% if current_user.id == @post.user_id %>
+        <%= link_to post_path(:id => @post.id),
+                        :data => {:confirm => "You sure?",
+                        :method => "delete"} do %>
+                        <i class="fa fa-trash fa-md trash"></i>
+                        <% end %>
+      <% end %></div><div class="timestamps"><%= @post.created_at %></div><div class="likes-count"><div class="like-bar"><%= @post.post_likes.count %>  likes</div>   <div class="comment-bar"><%= @post.comments.count %>  comments</div></div>
 </div>
 <% @post.comments.each_with_index do |comment, index| %>
   <% if index != 0 %>
@@ -16,7 +22,7 @@
                         <i class="fa fa-trash fa-md trash"></i>
                         <% end %>
       <% end %>
-      <div class="timestamps-comment"><%= @post.created_at %></div></div>
+        <div class="timestamps-comment"><%= comment.created_at %></div></div>
     </div>
   <% else %>
     <div class="other-comments">
@@ -24,6 +30,7 @@
       <div class="inner-post">
       <%= image_tag comment.user.avatar.url(:thumb), class: "small-image-thumb" %>
       <%= link_to comment.user.username, post_path(comment.user_id), class: "email label"%>
+        <%= link_to post_comment_comment_likes_path(:post_id => comment.post_id, :comment_id => comment.id), method: :post do %><i class="fa fa-thumbs-o-up fa-fw comment-icon-like"></i><% end %>
       <% if current_user.id == comment.user_id %>
         <%= link_to post_comment_path(:post_id => comment.post_id, :id => comment.id),
                         :data => {:confirm => "You sure?",
@@ -31,7 +38,7 @@
                         <i class="fa fa-trash fa-md trash"></i>
                         <% end %>
       <% end %>
-      <div class="timestamps-comment"><%= @post.created_at %></div></div>
+        <div class="timestamps-comment"><%= comment.created_at %></div><div class="likes-count"><div class="like-bar"><%= comment.comment_likes.count %>  likes</div></div></div>
     </div>
   <% end %>
 <% end %>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :post_likes
-    resources :comments
+    resources :comments do
+      resources :comment_likes
+    end
     resources :friendships
   end
 
