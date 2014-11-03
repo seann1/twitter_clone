@@ -3,7 +3,7 @@ class CreatePostLikes < ActiveRecord::Migration
     create_table :post_likes do |t|
       t.column :user_id, :integer
       t.column :post_id, :integer
-      t.timesta
+      t.timestamps
     end
   end
 end
