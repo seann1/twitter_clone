@@ -11,7 +11,6 @@ class RegistrationsController < Devise::RegistrationsController
     @user = User.find(current_user)
     @user.update(user_params)
     flash[:notice] = "updated"
-
   end
   
   private

@@ -14,20 +14,14 @@ gem "paperclip"
 gem 'font-awesome-sass'
 gem 'chronic'
 
-group :development do
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'shoulda-matchers'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'letter_opener'
-end
-
-group :test, :development do
-  gem 'rspec-rails'
-  gem 'pry'
-end
-
-group :test do
-  gem 'shoulda-matchers'
 end
 
 group :production do
