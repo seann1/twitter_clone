@@ -7,7 +7,7 @@
   <% @posts.each do |post| %>
 <div id="post">
   <p class="body"><%= post.body %></p>
-  <%= link_to post.user.username, post_path(post), class: "email" %></p>
+  <p><%= link_to post.user.username, post_path(post), class: "email" %></p>
 </div>
   <% end %>
 
