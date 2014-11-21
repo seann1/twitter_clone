@@ -23,3 +23,7 @@ group :test, :development do
   gem 'quiet_assets'
   gem 'letter_opener'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
