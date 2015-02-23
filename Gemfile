@@ -13,6 +13,7 @@ gem 'foundation-rails'
 gem "paperclip"
 gem 'font-awesome-sass'
 gem 'chronic'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :test, :development do
   gem 'rspec-rails'
